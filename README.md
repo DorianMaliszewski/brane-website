@@ -2,6 +2,17 @@
 
 This astro project is used for an architect landing page
 
+## Prerequisite
+
+- pnpm
+- Node v22
+
+## Based on
+
+- Astro
+- Tailwind
+
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
