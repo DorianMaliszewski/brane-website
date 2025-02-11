@@ -27,7 +27,7 @@ const pathname = Astro.url.pathname;
     >
     <span class="font-light">•</span>
     <a
-      class={`min-w-fit ${pathname === "/about" ? "font-semibold" : ""}`}
+      class={`min-w-fit ${pathname.includes("/about") ? "font-semibold" : ""}`}
       href="/about">Agence et contact</a
     >
   </nav>

@@ -5,8 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 
 import sitemap from "@astrojs/sitemap";
 
+console.log(process.env.NODE_ENV)
 // https://astro.build/config
 export default defineConfig({
+  site: process.env.NODE_ENV === "production" ? "https://www.atelier-brane.fr" : undefined,
   vite: {
     plugins: [tailwindcss()],
   },
