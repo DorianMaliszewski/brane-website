@@ -1,18 +1,21 @@
 @import "tailwindcss";
-@theme {  
+@theme {
   --color-background: #fafafa;
-  --color-primary: #676C4D;
-  --color-accent: #84B1E9;
-  --color-secondary: #F8D878;
+  --color-primary: #676c4d;
+  --color-accent: #84b1e9;
+  --color-secondary: #f8d878;
 
-
-  --animate-fade-in: fade-in 1s ease-in-out; 
-  @keyframes fade-in {   
+  --animate-fade-in: fade-in 1s ease-in-out;
+  @keyframes fade-in {
     0% {
       opacity: 0;
-    }    
+    }
     100% {
       opacity: 1;
-    } 
+    }
   }
+}
+
+body {
+  font-family: "Roboto";
 }

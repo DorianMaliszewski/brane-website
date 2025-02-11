@@ -12,7 +12,6 @@ This astro project is used for an architect landing page
 - Astro
 - Tailwind
 
-
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:

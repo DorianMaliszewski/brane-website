@@ -1,18 +1,85 @@
 ---
-import './src/styles/global.css'
-import TopBar from '../components/TopBar.astro'
+import "@fontsource/roboto/300.css";
+import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
+import TopBar from "../components/TopBar.astro";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body class="flex flex-col gap-18 max-w-screen overflow-x-hidden">
-    <TopBar />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--<link rel="icon" type="image/svg+xml" href="/favicon.svg" />-->
+    <meta name="generator" content={Astro.generator} />
+    <meta name=" robots" content=" index, follow" />
+    <meta name="description" content={description} />
+    <meta name="author" content="Anne Branchereau" />
+    <meta
+      name="keywords"
+      content="architecte, architecture, Caen, rénovation, construction, permis de construire, suivi de chantier"
+    />
+    <meta property="og:title" content="Anne Branchereau – Architecte à Caen" />
+    <meta
+      property="og:description"
+      content="Architecte HMONP à Caen, je conçois des espaces élégants et intemporels, du neuf à la rénovation."
+    />
+    <meta property="og:image" content="https://www.atelier-brane.fr/logo.png" />
+    <meta property="og:url" content="https://www.atelier-brane.fr" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="Logo de l'agence Brane" />
+    <meta name="twitter:title" content="Anne Branchereau – Architecte à Caen" />
+    <meta
+      name="twitter:description"
+      content="Architecte HMONP à Caen, je conçois des espaces élégants et intemporels, du neuf à la rénovation."
+    />
+    <meta
+      name="twitter:image"
+      content="https://www.atelier-brane.fr/logo.png"
+    />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <title>{title}</title>
+    <ClientRouter />
+  </head>
+  <body class="flex flex-col gap-12 max-w-screen overflow-x-hidden">
+    <TopBar
+      transition:persist
+      transition:animate="fade"
+      transition:name="topBar"
+    />
+    <main
+      class="flex flex-col gap-18"
+      transition:animate="fade"
+      transition:name="mainContent"
+    >
+      <slot />
+    </main>
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Anne Branchereau – Architecte",
+        "url": "https://www.atelier-brane.fr",
+        "image": "https://www.atelier-brane.fr/logo.png",
+        "description": "Architecte HMONP à Caen, spécialisée en rénovation et construction neuve.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Caen",
+          "addressCountry": "FR"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+33645335337",
+          "contactType": "customer service"
+        }
+      }
+    </script>
+  </body>
 </html>

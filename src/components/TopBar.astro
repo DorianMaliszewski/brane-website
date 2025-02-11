@@ -1,17 +1,34 @@
 ---
-import logo from '../assets/logo.svg'
+import { Image } from "astro:assets";
+import logo from "../assets/logo.png";
+
+const pathname = Astro.url.pathname;
 ---
-<header class="flex flex-col bg-background px-18 xl:px-24 mt-8">
-  <div class="animate-fade-in flex pb-4 xl:pb-12 xl:px-24 overflow-hidden ">
-    <a href='/' class="h-22">
-      <img src={logo.src} alt={logo.name} class="w-2/3"/>
+
+<header
+  transition:persist
+  class="flex flex-col md:flex-row justify-between items-center bg-background px-18 xl:px-24 pt-8"
+>
+  <div class="flex items-center overflow-hidden">
+    <a href="/">
+      <Image
+        src={logo}
+        alt="Logo de Brane"
+        class="h-32 object-contain w-auto text-background"
+        loading="eager"
+      />
     </a>
   </div>
-  <nav class='text-primary flex justify-around items-center gap-8 py-2 xl:px-24'>
-    <a class="min-w-fit" href="/#projects">Projets</a>
+  <nav
+    class="text-primary text-md md:text-lg flex items-center gap-8 py-2 xl:px-24"
+  >
+    <a class={`min-w-fit ${pathname === "/" ? "font-semibold" : ""}`} href="/"
+      >Projets</a
+    >
     <span class="font-light">•</span>
-    <a class="min-w-fit" href="/#about">A propos</a>
-    <span class="font-light">•</span>
-    <a class="min-w-fit" href="/#contact">Contact</a>
+    <a
+      class={`min-w-fit ${pathname === "/about" ? "font-semibold" : ""}`}
+      href="/about">Agence et contact</a
+    >
   </nav>
 </header>

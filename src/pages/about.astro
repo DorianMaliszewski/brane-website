@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const description =
+  "Architecte HMONP à Caen, Anne Branchereau conçoit des espaces élégants et intemporels, du neuf à la rénovation. Études de faisabilité, conception, permis, plans et suivi de chantier. Architecture sobre, cohérente et adaptée aux usages.";
+const title = "Brane | Agence et contact";
+---
+
+<Layout title={title} description={description}>
+  <section id="about" class="grid px-12 md:px-24 gap-4">
+    <h2 class="font-semibold text-lg">L'agence</h2>
+    <div class="grid md:grid-cols-2">
+      <p>
+        Basée à Caen, j’accompagne particuliers et professionnels dans leurs
+        projets d’architecture, de la rénovation à la conception neuve. Mon
+        approche s’appuie sur l’analyse du site et des usages pour concevoir des
+        espaces cohérents, élégants et intemporels.<br />
+        Travaillant à toutes les échelles, j’intègre contexte, savoir-faire et usages
+        pour aboutir à une architecture sobre et cohérente.<br />
+        J’interviens sur : <br />
+        – Études de faisabilité <br />
+        – Conception et esquisse<br />
+        – Demandes d’autorisations<br />
+        – Plans détaillés et suivi de chantier<br /><br />
+        Mon objectif : créer des lieux fonctionnels et adaptés, en harmonie avec
+        leurs occupants et leur environnement.<br />
+      </p>
+    </div>
+  </section>
+  <section
+    id="contact"
+    class="grid md:grid-cols-2 justify-center items-center gap-4 md:gap-0 border-t-2 border-primary p-12 md:px-24"
+  >
+    <dl class="flex flex-col gap-4">
+      <dt class="font-semibold text-lg">Anne Branchereau</dt>
+      <dd>Architecte HMONP</dd>
+      <dd>
+        <a class="underline text-primary" href="tel:0645335337">
+          06 45 33 53 37
+        </a>
+      </dd>
+      <dd>
+        <a class="underline text-primary" href="mailto:atelierbrane@gmail.com">
+          atelierbrane@gmail.com
+        </a>
+      </dd>
+      <dd>
+        <p>10 Passage des Jacobins</p>
+        <p>14000 CAEN</p>
+      </dd>
+    </dl>
+    <iframe
+      class="w-full"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5216.165896093469!2d-0.3651453066419518!3d49.18001259757698!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x480a4297ac936a83%3A0xdd31a7d6a3b1f836!2s10%20Pass.%20des%20Jacobins%2C%2014000%20Caen!5e0!3m2!1sfr!2sfr!4v1738760252366!5m2!1sfr!2sfr"
+      width="400"
+      height="300"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+</Layout>
