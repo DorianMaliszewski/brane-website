@@ -46,6 +46,15 @@ const { title, description } = Astro.props;
     />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <title>{title}</title>
+    <!-- Google tag (gtag.js) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-16868095537">
+    </script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-16868095537');
+    </script>
     <ClientRouter />
   </head>
   <body class="flex flex-col gap-12 max-w-screen overflow-x-hidden bg-background">
