@@ -35,12 +35,20 @@ const title = "Brane | Agence et contact";
       <dt class="font-semibold text-lg">Anne Branchereau</dt>
       <dd>Architecte HMONP</dd>
       <dd>
-        <a class="underline text-primary" href="tel:0645335337">
+        <a
+          onclick="gtag_report_conversion()"
+          class="underline text-primary"
+          href="tel:0645335337"
+        >
           06 45 33 53 37
         </a>
       </dd>
       <dd>
-        <a class="underline text-primary" href="mailto:atelierbrane@gmail.com">
+        <a
+          onclick="gtag_report_conversion()"
+          class="underline text-primary"
+          href="mailto:atelierbrane@gmail.com"
+        >
           atelierbrane@gmail.com
         </a>
       </dd>
@@ -59,4 +67,12 @@ const title = "Brane | Agence et contact";
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
+  <script is:inline>
+    function gtag_report_conversion() {
+      gtag("event", "conversion", {
+        send_to: "AW-16868095537/p8r2CO_NtaIaELHsqus-",
+      });
+      return false;
+    }
+  </script>
 </Layout>
