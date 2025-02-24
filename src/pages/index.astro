@@ -10,6 +10,7 @@ import chevrefeuilles7 from "../assets/projets/chevrefeuilles/7.jpg";
 import chevrefeuilles8 from "../assets/projets/chevrefeuilles/8.jpg";
 import chevrefeuilles9 from "../assets/projets/chevrefeuilles/9.jpg";
 import ProjectCard from "../components/ProjectCard.astro";
+import InProgress from "../components/InProgress.astro";
 import Layout from "../layouts/Layout.astro";
 
 const chevrefeuilles = [
@@ -32,12 +33,13 @@ const title = "Brane | Projets";
 
 <Layout title={title} description={description}>
   <section id="projects" class="px-12 md:px-24 flex flex-col gap-4 items-start">
-    <div class="grid grid-cols-2 md:grid-cols-5">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
       <ProjectCard
         images={chevrefeuilles}
         projectName="chevrefeuilles"
         coverIndex={0}
       />
+      <InProgress />
     </div>
   </section>
 </Layout>
